@@ -50,6 +50,175 @@
     <style data-emotion="css" data-s=""></style>
     <link rel="stylesheet" type="text/css" href="chrome-extension://mklbhckkgddhlcdagmobdmnadpjokkkn/common.css">
     <link rel="stylesheet" type="text/css" href="chrome-extension://mklbhckkgddhlcdagmobdmnadpjokkkn/TopFrame.css">
+
+
+         
+
+
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.9.1.min.js"></script>
+
+    <script type="text/javascript">
+    
+        window.addEventListener("load", mediaSizer);
+        //window.addEventListener("resize", mediaSizer);
+        // Listeners that will react when the page first loads or is resized.
+        // If any of these events take place the mediaSizer() function executes.
+    
+        var vizList = [
+    
+            "https://public.tableau.com/views/resultadobellinati/AcompanhamentodeResultado?:language=en-US&:display_count=n&:origin=viz_share_link",
+            "https://public.tableau.com/views/RHDespesasdefuncionariosbellinati/Cockpit?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
+            "https://us-east-1.online.tableau.com/t/luizoliveira/views/PrevistoxRealizado_16860047788610/AnliseMensal/9ab8389e-71ff-489b-8399-d0fc4acf0e10/6f8e7cb9-b8b9-4149-a324-da8ae8e6fa6e",
+            "https://public.tableau.com/views/FinanasCorporativas-PainelDemonstrativoFinanceiroquod/Cockpit-Finance?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
+    
+            "https://public.tableau.com/views/ExecutiveDashboardbellinati/ExecutiveDashboard?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
+            "https://demo.tableau.com/t/LuizOliveira/views/2-Template_16836500933620/Template",
+            "https://public.tableau.com/views/3-Exemplobellinati/DashExemplo?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link",
+    
+            "https://public.tableau.com/views/Howhastheworldchangedsince1962/WorldIndicators?:language=en-US&:display_count=n&:origin=viz_share_link",
+    
+            "https://public.tableau.com/views/TheTableauChartCatalog/TableauChartExamples",
+    
+            "https://public.tableau.com/views/CallCenterDashboard_15687891318050/ExecutiveSummary?:apiInternalVersion=1.71.0&:disableUrlActionsPopups=n&navSrc=Opt&:embed=y&navType=0&mobile=n&:embeddingV3=y&:toolbar=n&:jsdebug=n&:apiExternalVersion=3.0.0&:display_count=n&:origin=viz_share_link",
+            "https://public.tableau.com/views/AccountsReceivableDashboard_15949722399650/ExecutiveSummary?:apiInternalVersion=1.131.0&:disableUrlActionsPopups=n&navSrc=Opt&:embed=y&navType=0&:suppressDefaultEditBehavior=n&mobile=n&:toolbar=n&:hideEditButton=y&:hideEditInDesktopButton=n&:jsdebug=n&:apiExternalVersion=3.6.0&:display_count=n&:origin=viz_share_link",
+    
+            "https://public.tableau.com/views/ProcurementDashboard_6/Home?:language=en-US&:toolbar=n&:display_count=n&:origin=viz_share_link",
+            "https://public.tableau.com/views/1-DesigningEffectiveDashboardsPublic/Intro?:language=en-US&:display_count=n&:origin=viz_share_link",
+            "https://public.tableau.com/views/Embedded_Analytics/Introduo?:language=en-US&:display_count=n&:origin=viz_share_link"
+    
+    
+    
+        ];
+        // Array of Tableau Server URLs for dashboard or sheet navigation.
+    
+        var viz,
+            vizLen = vizList.length,
+            vizCount = 0,
+            devType,
+            vHideTabs = true,
+            vHideToolbar = true;
+        var options = {
+            device: devType,
+        };
+    
+    
+        function mediaSizer() {
+            // Determines the correct viz layout according to screen sizes.
+            if (window.matchMedia("(max-width: 420px)").matches) {
+            //alert("I am a phone layout!");
+            devType = 'phone';
+            vWidth = 420;
+            vHeight = 2000;
+            console.log("devtype: " + devType)
+        console.log("launch0")
+        launchViz(0);
+
+        vHeight = 1200;
+        launchViz(1);
+        vHeight = 2800;
+        
+      
+        //launchViz(3);
+       
+       // launchViz(4);
+       vHeight = 1800;
+        launchViz(6);
+
+ vHeight = 1400;
+       // launchViz(7);
+      
+
+       
+            //options.device = 'phone';
+            } else if (window.matchMedia("(max-width: 980px)").matches) {
+                //alert("I am a tablet layout!");
+                devType = 'tablet';
+                vWidth = 980;
+                //options.device = 'tablet';
+            } else {
+                //alert("I am a desktop layout!");
+                devType = 'desktop';
+                vWidth = 1666;
+                vHeight = 1000;
+                //options.device = 'desktop';
+            
+            console.log("devtype: " + devType)
+            console.log("launch0")
+            vHeight = 900;
+            launchViz(0);
+            console.log("launch1")
+            launchViz(1);
+    
+            console.log("launch2")
+            vHeight = 1100;
+           // launchViz(2);
+            console.log("launch3")
+           // launchViz(3);
+            vHeight = 1800;
+            //launchViz(4);
+            vHeight = 1100;
+            vHideToolbar = true;
+            vHideTabs = true;
+            //launchViz(5);
+            launchViz(6);
+            vHeight = 1300;
+            launchViz(7);
+            vHeight = 8000;
+    
+            launchViz(8);
+            vHeight = 1300;
+    
+            vHideToolbar = false;
+            vHideTabs = false;
+            launchViz(9);
+            vHeight = 1000;
+            launchViz(10);
+            vHeight = 1000;
+            launchViz(11);
+            launchViz(12);
+            launchViz(13);
+            }
+            // Launches the viz again with the new sizing at the current index of vizList.
+        }
+    
+    
+        function launchViz(vizNav) {
+            // JS object targeting a div in the html document. (vizNav) will pass navigation values to move back and forth across vizList.
+            console.log("vizContainer" + vizNav)
+            console.log("devtype: " + devType)
+            var vizDiv = document.getElementById("vizContainer" + vizNav),
+                // Will embed the visualization on a div with id="VizContainer"
+                options = {
+                    device: devType,
+                    width: vWidth,
+                    height: vHeight,
+                    hideTabs: vHideTabs,
+                    hideToolbar: vHideToolbar,
+                    onFirstInteractive: function () {
+                        listenToMarksSelection();
+                    }
+                };
+    
+    
+            var vizURL = vizList[vizNav];
+            // Dynamic URL returning the string from vizList at index = vizNav (viz to be displayed).
+    
+            try {
+                // Initializes the viz from the array with desired options. 
+                viz = new tableau.Viz(vizDiv, vizURL, options);
+                if (!viz) throw 'viz not initialized'
+            }
+            catch (err) {
+                alert(err);
+            }
+            finally {
+                console.log('whatever')
+                console.count('initViz')
+            }
+    
+        }
+    
+    </script>
 </head>
 
 <body><noscript>You need to enable JavaScript to run this app.</noscript>
@@ -142,14 +311,14 @@
                 <div id="vizContainer3"></div>
             </div>
           </div>  -->
-          <div style="text-align: center;">
+       <!--    <div style="text-align: center;">
             <div style="display: inline-block;">
                 <p> - </p>
                 <p> Exemplo de dashboard executivo com indicadores.  </p>
                 <p> - </p>
                 <div id="vizContainer4"></div>
             </div>
-          </div>
+          </div> -->
           
           <div style="text-align: center;">
             <div style="display: inline-block;">
